@@ -19,7 +19,8 @@ class CustomGalleryViewController: UIViewController {
     fileprivate var imageSize : CGSize!
     fileprivate var imageManager:PHCachingImageManager? = PHCachingImageManager()
     fileprivate var selectedAssets = [PHAsset]()
-        
+    fileprivate var gridType : CGFloat = 3.0
+    
     override func viewDidLoad() {
         
         self.edgesForExtendedLayout = []
@@ -28,7 +29,8 @@ class CustomGalleryViewController: UIViewController {
         collectionView.register(UINib(nibName: "CGCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CGCollectionViewCell")
         
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.backPressed))
-        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Grid", style: .plain, target: self, action: #selector(self.gridPressed))
+
         fetchPHAssetFromLibrary()
         
         self.view.layoutIfNeeded()
@@ -36,7 +38,10 @@ class CustomGalleryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        scrollToBottom()
+    }
+    
+    fileprivate func scrollToBottom() {
         let collectionViewHeight = collectionView.collectionViewLayout.collectionViewContentSize.height
         
         collectionView.scrollRectToVisible(CGRect(x: 0, y: collectionViewHeight+11, width: 1, height: 1), animated: true)
@@ -53,6 +58,10 @@ class CustomGalleryViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @objc fileprivate func gridPressed() {
+        showActionSheet()
+    }
+    
     fileprivate func fetchPHAssetFromLibrary() {
         
         let scale = UIScreen.main.scale
@@ -62,6 +71,25 @@ class CustomGalleryViewController: UIViewController {
         let fetchOptions = PHFetchOptions()
         fetchOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
         fetchResult = PHAsset.fetchAssets(with: .image, options: fetchOptions)
+    }
+    
+    fileprivate func reloadCollectionView(value:CGFloat) {
+        self.gridType = value
+        self.collectionView.reloadData()
+        self.scrollToBottom()
+    }
+    
+    fileprivate func showActionSheet() {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: gridType == 4 ? "‣ 4x4" : "4x4", style: .default, handler: { (_) in
+            self.reloadCollectionView(value: 4.0)
+        }))
+        alertController.addAction(UIAlertAction(title: gridType == 3 ? "‣ 3x3" : "3x3", style: .default, handler: { (_) in
+            self.reloadCollectionView(value: 3.0)
+        }))
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
     
     fileprivate func addBottomConstraintForCollectionView() {
@@ -108,7 +136,8 @@ extension CustomGalleryViewController : UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/3, height: collectionView.frame.width/3)
+        
+        return CGSize(width: collectionView.frame.width/gridType, height: collectionView.frame.width/gridType)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
