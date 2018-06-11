@@ -2,7 +2,7 @@
 //  CustomGalleryAppTests.swift
 //  CustomGalleryAppTests
 //
-//  Created by ZydeSoft on 05/06/18.
+//  Created by Saravanakumar on 05/06/18.
 //  Copyright © 2018 Saravanakumar. All rights reserved.
 //
 

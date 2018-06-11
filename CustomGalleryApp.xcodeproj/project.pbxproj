@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		F0D75F3E20C66DF600D001EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F3D20C66DF600D001EC /* AppDelegate.swift */; };
-		F0D75F4020C66DF600D001EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F3F20C66DF600D001EC /* ViewController.swift */; };
+		F0D75F4020C66DF600D001EC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F3F20C66DF600D001EC /* MainViewController.swift */; };
 		F0D75F4320C66DF600D001EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D75F4120C66DF600D001EC /* Main.storyboard */; };
 		F0D75F4620C66DF600D001EC /* CustomGalleryApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F4420C66DF600D001EC /* CustomGalleryApp.xcdatamodeld */; };
 		F0D75F4820C66DF600D001EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0D75F4720C66DF600D001EC /* Assets.xcassets */; };
 		F0D75F4B20C66DF600D001EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D75F4920C66DF600D001EC /* LaunchScreen.storyboard */; };
 		F0D75F5620C66DF600D001EC /* CustomGalleryAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F5520C66DF600D001EC /* CustomGalleryAppTests.swift */; };
 		F0D75F6120C66DF600D001EC /* CustomGalleryAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F6020C66DF600D001EC /* CustomGalleryAppUITests.swift */; };
+		F0D75F6F20C66F1900D001EC /* CustomGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F6E20C66F1900D001EC /* CustomGalleryViewController.swift */; };
+		F0D75F7420C6958C00D001EC /* CGCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D75F7220C6958C00D001EC /* CGCollectionViewCell.swift */; };
+		F0D75F7520C6958C00D001EC /* CGCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D75F7320C6958C00D001EC /* CGCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +40,7 @@
 /* Begin PBXFileReference section */
 		F0D75F3A20C66DF600D001EC /* CustomGalleryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomGalleryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D75F3D20C66DF600D001EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F0D75F3F20C66DF600D001EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0D75F3F20C66DF600D001EC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		F0D75F4220C66DF600D001EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F0D75F4520C66DF600D001EC /* CustomGalleryApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CustomGalleryApp.xcdatamodel; sourceTree = "<group>"; };
 		F0D75F4720C66DF600D001EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		F0D75F5C20C66DF600D001EC /* CustomGalleryAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomGalleryAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0D75F6020C66DF600D001EC /* CustomGalleryAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGalleryAppUITests.swift; sourceTree = "<group>"; };
 		F0D75F6220C66DF600D001EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0D75F6E20C66F1900D001EC /* CustomGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGalleryViewController.swift; sourceTree = "<group>"; };
+		F0D75F7220C6958C00D001EC /* CGCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGCollectionViewCell.swift; sourceTree = "<group>"; };
+		F0D75F7320C6958C00D001EC /* CGCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CGCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				F0D75F3D20C66DF600D001EC /* AppDelegate.swift */,
-				F0D75F3F20C66DF600D001EC /* ViewController.swift */,
+				F0D75F3F20C66DF600D001EC /* MainViewController.swift */,
+				F0D75F6E20C66F1900D001EC /* CustomGalleryViewController.swift */,
+				F0D75F7220C6958C00D001EC /* CGCollectionViewCell.swift */,
+				F0D75F7320C6958C00D001EC /* CGCollectionViewCell.xib */,
 				F0D75F4120C66DF600D001EC /* Main.storyboard */,
 				F0D75F4720C66DF600D001EC /* Assets.xcassets */,
 				F0D75F4920C66DF600D001EC /* LaunchScreen.storyboard */,
@@ -191,7 +200,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Saravanakumar;
 				TargetAttributes = {
 					F0D75F3920C66DF600D001EC = {
@@ -237,6 +246,7 @@
 			files = (
 				F0D75F4B20C66DF600D001EC /* LaunchScreen.storyboard in Resources */,
 				F0D75F4820C66DF600D001EC /* Assets.xcassets in Resources */,
+				F0D75F7520C6958C00D001EC /* CGCollectionViewCell.xib in Resources */,
 				F0D75F4320C66DF600D001EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,9 +272,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0D75F6F20C66F1900D001EC /* CustomGalleryViewController.swift in Sources */,
 				F0D75F4620C66DF600D001EC /* CustomGalleryApp.xcdatamodeld in Sources */,
-				F0D75F4020C66DF600D001EC /* ViewController.swift in Sources */,
+				F0D75F4020C66DF600D001EC /* MainViewController.swift in Sources */,
 				F0D75F3E20C66DF600D001EC /* AppDelegate.swift in Sources */,
+				F0D75F7420C6958C00D001EC /* CGCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +345,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -340,6 +353,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -390,6 +404,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -397,6 +412,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -431,9 +447,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X8H2Z85T93;
 				INFOPLIST_FILE = CustomGalleryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CustomGalleryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zydesoft.phoneAuth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -445,9 +463,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X8H2Z85T93;
 				INFOPLIST_FILE = CustomGalleryApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.CustomGalleryApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zydesoft.phoneAuth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
